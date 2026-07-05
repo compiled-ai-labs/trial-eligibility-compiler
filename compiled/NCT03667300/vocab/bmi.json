@@ -1,0 +1,18 @@
+{
+  "concept_set_id": 5,
+  "concepts": [
+    {
+      "concept_class_id": "Lab Test",
+      "concept_code": "39156-5",
+      "concept_id": 3038553,
+      "concept_name": "Body mass index (BMI) [Ratio]",
+      "domain_id": "Measurement",
+      "standard_concept": "S",
+      "vocabulary_id": "LOINC"
+    }
+  ],
+  "description": "Body mass index measurement.",
+  "include_descendants": false,
+  "name": "bmi",
+  "provenance": "LOINC 39156-5 -> OMOP 3038553. Athena snapshot: athena-v5-2023q3 (pinned synthetic subset)."
+}

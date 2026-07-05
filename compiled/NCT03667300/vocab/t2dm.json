@@ -1,0 +1,18 @@
+{
+  "concept_set_id": 0,
+  "concepts": [
+    {
+      "concept_class_id": "Clinical Finding",
+      "concept_code": "44054006",
+      "concept_id": 201826,
+      "concept_name": "Type 2 diabetes mellitus",
+      "domain_id": "Condition",
+      "standard_concept": "S",
+      "vocabulary_id": "SNOMED"
+    }
+  ],
+  "description": "Type 2 diabetes mellitus (and descendants).",
+  "include_descendants": true,
+  "name": "t2dm",
+  "provenance": "SNOMED 44054006 -> OMOP 201826. Athena snapshot: athena-v5-2023q3 (pinned synthetic subset)."
+}

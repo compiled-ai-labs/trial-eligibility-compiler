@@ -1,0 +1,45 @@
+{
+  "concept_set_id": 8,
+  "concepts": [
+    {
+      "concept_class_id": "Ingredient",
+      "concept_code": "593411",
+      "concept_id": 1580747,
+      "concept_name": "sitagliptin",
+      "domain_id": "Drug",
+      "standard_concept": "S",
+      "vocabulary_id": "RxNorm"
+    },
+    {
+      "concept_class_id": "Ingredient",
+      "concept_code": "1100699",
+      "concept_id": 43526465,
+      "concept_name": "linagliptin",
+      "domain_id": "Drug",
+      "standard_concept": "S",
+      "vocabulary_id": "RxNorm"
+    },
+    {
+      "concept_class_id": "Ingredient",
+      "concept_code": "475968",
+      "concept_id": 45774435,
+      "concept_name": "liraglutide",
+      "domain_id": "Drug",
+      "standard_concept": "S",
+      "vocabulary_id": "RxNorm"
+    },
+    {
+      "concept_class_id": "Ingredient",
+      "concept_code": "60548",
+      "concept_id": 1583722,
+      "concept_name": "exenatide",
+      "domain_id": "Drug",
+      "standard_concept": "S",
+      "vocabulary_id": "RxNorm"
+    }
+  ],
+  "description": "DPP-4 inhibitor or GLP-1 analogue ingredients.",
+  "include_descendants": false,
+  "name": "dpp4_glp1",
+  "provenance": "RxNorm ingredients: sitagliptin, linagliptin, liraglutide, exenatide. Athena snapshot: athena-v5-2023q3 (pinned synthetic subset)."
+}

@@ -1,0 +1,45 @@
+{
+  "concept_set_id": 4,
+  "concepts": [
+    {
+      "concept_class_id": "Ingredient",
+      "concept_code": "52175",
+      "concept_id": 1367500,
+      "concept_name": "losartan",
+      "domain_id": "Drug",
+      "standard_concept": "S",
+      "vocabulary_id": "RxNorm"
+    },
+    {
+      "concept_class_id": "Ingredient",
+      "concept_code": "69749",
+      "concept_id": 1308842,
+      "concept_name": "valsartan",
+      "domain_id": "Drug",
+      "standard_concept": "S",
+      "vocabulary_id": "RxNorm"
+    },
+    {
+      "concept_class_id": "Ingredient",
+      "concept_code": "29046",
+      "concept_id": 1308216,
+      "concept_name": "lisinopril",
+      "domain_id": "Drug",
+      "standard_concept": "S",
+      "vocabulary_id": "RxNorm"
+    },
+    {
+      "concept_class_id": "Ingredient",
+      "concept_code": "3827",
+      "concept_id": 1341927,
+      "concept_name": "enalapril",
+      "domain_id": "Drug",
+      "standard_concept": "S",
+      "vocabulary_id": "RxNorm"
+    }
+  ],
+  "description": "ARB or ACE inhibitor ingredients.",
+  "include_descendants": false,
+  "name": "arb_acei",
+  "provenance": "RxNorm ingredients: losartan, valsartan, lisinopril, enalapril. Athena snapshot: athena-v5-2023q3 (pinned synthetic subset)."
+}

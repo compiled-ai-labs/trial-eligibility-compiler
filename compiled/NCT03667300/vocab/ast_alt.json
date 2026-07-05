@@ -1,0 +1,27 @@
+{
+  "concept_set_id": 7,
+  "concepts": [
+    {
+      "concept_class_id": "Lab Test",
+      "concept_code": "1920-8",
+      "concept_id": 3013721,
+      "concept_name": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "domain_id": "Measurement",
+      "standard_concept": "S",
+      "vocabulary_id": "LOINC"
+    },
+    {
+      "concept_class_id": "Lab Test",
+      "concept_code": "1742-6",
+      "concept_id": 3006923,
+      "concept_name": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma",
+      "domain_id": "Measurement",
+      "standard_concept": "S",
+      "vocabulary_id": "LOINC"
+    }
+  ],
+  "description": "AST or ALT serum enzyme activity.",
+  "include_descendants": false,
+  "name": "ast_alt",
+  "provenance": "LOINC 1920-8 (AST), 1742-6 (ALT). Athena snapshot: athena-v5-2023q3 (pinned synthetic subset)."
+}

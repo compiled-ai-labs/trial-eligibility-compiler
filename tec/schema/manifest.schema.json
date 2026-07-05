@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://compiled-ai-labs/trial-eligibility-compiler/manifest.schema.json",
+  "title": "Manifest (provenance/audit envelope)",
+  "description": "One entry per verbatim source sentence id. The AMBIGUOUS surface lives here and is enforced never to enter cohort.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["trial_id", "entries"],
+  "properties": {
+    "trial_id": { "type": "string", "pattern": "^NCT[0-9]{8}$" },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/entry" }
+    }
+  },
+  "definitions": {
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["criterion_id", "source_span", "disposition", "rationale", "cohort_rule", "concepts"],
+      "properties": {
+        "criterion_id": { "type": "string", "pattern": "^[IE][0-9]+$" },
+        "source_span": { "type": "string", "minLength": 1 },
+        "disposition": { "type": "string", "enum": ["INCLUDE", "EXCLUDE", "AMBIGUOUS"] },
+        "rationale": { "type": "string", "minLength": 1 },
+        "cohort_rule": { "type": ["string", "null"] },
+        "concepts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["concept_id", "concept_set"],
+            "properties": {
+              "concept_id": { "type": "integer" },
+              "concept_set": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

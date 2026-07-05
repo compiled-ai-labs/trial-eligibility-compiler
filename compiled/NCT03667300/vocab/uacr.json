@@ -1,0 +1,18 @@
+{
+  "concept_set_id": 2,
+  "concepts": [
+    {
+      "concept_class_id": "Lab Test",
+      "concept_code": "9318-7",
+      "concept_id": 3034485,
+      "concept_name": "Albumin/Creatinine [Mass Ratio] in Urine",
+      "domain_id": "Measurement",
+      "standard_concept": "S",
+      "vocabulary_id": "LOINC"
+    }
+  ],
+  "description": "Urine albumin/creatinine ratio (mass ratio).",
+  "include_descendants": false,
+  "name": "uacr",
+  "provenance": "LOINC 9318-7 -> OMOP 3034485. Athena snapshot: athena-v5-2023q3 (pinned synthetic subset)."
+}

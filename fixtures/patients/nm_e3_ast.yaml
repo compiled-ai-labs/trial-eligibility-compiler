@@ -1,0 +1,60 @@
+conditions:
+- concept_id: 201826
+  label: Type 2 diabetes mellitus
+  start_date: '2020-01-01'
+description: AST 200 > 3x ULN -> E3 excludes.
+drugs:
+- concept_id: 1367500
+  end_date: '2023-06-01'
+  label: losartan (ARB)
+  start_date: '2023-01-01'
+expected:
+  E1: INCLUDED
+  E2: AMBIGUOUS
+  E3: EXCLUDED
+  E4: INCLUDED
+  E5: AMBIGUOUS
+  E6: AMBIGUOUS
+  E7: AMBIGUOUS
+  E8: AMBIGUOUS
+  I1: INCLUDED
+  I2: INCLUDED
+  I3: INCLUDED
+  I4: INCLUDED
+  I5: INCLUDED
+  I6: INCLUDED
+  I7: INCLUDED
+  I8: AMBIGUOUS
+expected_membership: false
+index_date: '2023-06-01'
+measurements:
+- concept_id: 3004410
+  date: '2023-06-01'
+  label: HbA1c
+  unit: '%'
+  value: 8.0
+- concept_id: 3034485
+  date: '2023-06-01'
+  label: UACR
+  unit: ug/mg
+  value: 300.0
+- concept_id: 3049187
+  date: '2023-06-01'
+  label: eGFR
+  unit: mL/min/1.73m2
+  value: 45.0
+- concept_id: 3038553
+  date: '2023-06-01'
+  label: BMI
+  unit: kg/m2
+  value: 28.0
+- concept_id: 3013721
+  date: '2023-06-01'
+  label: AST
+  unit: U/L
+  value: 200.0
+patient_id: nm_e3_ast
+person:
+  birth_date: '1970-01-01'
+  gender: MALE
+procedures: []

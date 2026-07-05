@@ -1,0 +1,56 @@
+{
+  "compile": {
+    "model_id": null,
+    "note": "model_id is pinned in Stage 3 when the real Anthropic client is wired; null in the hand-authored Stage 1 artifact.",
+    "temperature": 0
+  },
+  "day_counts": {
+    "arb_acei_more_than_4_weeks": {
+      "implemented_as": "DrugExposure days_supply >= 29",
+      "pinned": ">4 weeks == >=29 days continuous exposure"
+    },
+    "dpp4_glp1_within_8_weeks": {
+      "implemented_as": "StartWindow [index-56d, index]",
+      "pinned": "within 8 weeks == drug start within 56 days before index"
+    }
+  },
+  "index_date": "2023-06-01",
+  "index_event": "First VisitOccurrence (synthetic screening visit).",
+  "measurement_window_days": 180,
+  "numeric_bounds": {
+    "bmi_kg_m2": {
+      "high": 40.0,
+      "inclusive": "both",
+      "low": 20.0,
+      "unit": "kg/m2"
+    },
+    "egfr_ml_min_1_73m2": {
+      "inclusive": "low",
+      "low": 30.0,
+      "unit": "mL/min/1.73m2"
+    },
+    "hba1c_percent": {
+      "high": 10.0,
+      "inclusive": "both",
+      "low": 7.0,
+      "unit": "% (NGSP)"
+    },
+    "uacr_ug_per_mg": {
+      "high": 3000.0,
+      "inclusive": "both",
+      "low": 30.0,
+      "unit": "ug/mg"
+    }
+  },
+  "recompile_equality": "Gate 4 requires the recompiled artifact to be byte-identical; the compiler-side recompile check is wired in Stage 2.",
+  "serialization": "canonical JSON: sorted keys, 2-space indent, LF newline, trailing newline.",
+  "trial_id": "NCT03667300",
+  "uln": {
+    "analyte": "AST/ALT",
+    "source": "Common clinical reference upper normal limit ~40 U/L for AST/ALT; 3x ULN = 120 U/L. Chosen and documented, not authoritative.",
+    "threshold_multiple": 3,
+    "threshold_value_U_per_L": 120,
+    "uln_U_per_L": 40
+  },
+  "vocab_snapshot": "athena-v5-2023q3 (pinned synthetic subset)"
+}

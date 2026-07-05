@@ -1,0 +1,13 @@
+{
+  "name": "trial-eligibility-compiler",
+  "build": { "dockerfile": "Dockerfile", "context": ".." },
+  "remoteEnv": {
+    "JAVA_HOME": "/usr/lib/jvm/java-17-openjdk-amd64"
+  },
+  "postCreateCommand": "python3.11 -m pytest -q",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "reditorsupport.r"]
+    }
+  }
+}

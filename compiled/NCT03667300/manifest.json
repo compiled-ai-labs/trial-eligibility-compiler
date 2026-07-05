@@ -1,0 +1,214 @@
+{
+  "entries": [
+    {
+      "cohort_rule": "I1_age_ge_20",
+      "concepts": [],
+      "criterion_id": "I1",
+      "disposition": "INCLUDE",
+      "rationale": "Age is a demographic attribute evaluable at index; pinned bound age >= 20 (conventions.json).",
+      "source_span": "Men and women aged 20 years or older diagnosed with type 2 diabetes."
+    },
+    {
+      "cohort_rule": "I2_t2dm",
+      "concepts": [
+        {
+          "concept_id": 201826,
+          "concept_set": "t2dm"
+        }
+      ],
+      "criterion_id": "I2",
+      "disposition": "INCLUDE",
+      "rationale": "Type 2 diabetes has a vocabulary-native standard concept; membership is data-determinable.",
+      "source_span": "Subjects diagnosed with type 2 diabetes."
+    },
+    {
+      "cohort_rule": "I3_hba1c",
+      "concepts": [
+        {
+          "concept_id": 3004410,
+          "concept_set": "hba1c"
+        }
+      ],
+      "criterion_id": "I3",
+      "disposition": "INCLUDE",
+      "rationale": "Numeric lab bound; only a unit convention (% NGSP) and inclusive edges are added.",
+      "source_span": "Subjects having HbA1c 7.0% or more, and 10% or less."
+    },
+    {
+      "cohort_rule": "I4_uacr",
+      "concepts": [
+        {
+          "concept_id": 3034485,
+          "concept_set": "uacr"
+        }
+      ],
+      "criterion_id": "I4",
+      "disposition": "INCLUDE",
+      "rationale": "Numeric lab bound with inclusive edges; unit ug/mg pinned in conventions.json.",
+      "source_span": "Subjects having urine albumin to creatinine ratio (UACR) 30 ug/mg or more, and 3000 ug/mg or less."
+    },
+    {
+      "cohort_rule": "I5_egfr",
+      "concepts": [
+        {
+          "concept_id": 3049187,
+          "concept_set": "egfr"
+        }
+      ],
+      "criterion_id": "I5",
+      "disposition": "INCLUDE",
+      "rationale": "Numeric lab bound (>= 30) with inclusive low edge.",
+      "source_span": "Subjects having estimated glomerular filtration rate (eGFR) 30 or more."
+    },
+    {
+      "cohort_rule": "I6_arb_acei_ge_29d",
+      "concepts": [
+        {
+          "concept_id": 1367500,
+          "concept_set": "arb_acei"
+        },
+        {
+          "concept_id": 1308842,
+          "concept_set": "arb_acei"
+        },
+        {
+          "concept_id": 1308216,
+          "concept_set": "arb_acei"
+        },
+        {
+          "concept_id": 1341927,
+          "concept_set": "arb_acei"
+        }
+      ],
+      "criterion_id": "I6",
+      "disposition": "INCLUDE",
+      "rationale": "Drug-class membership is vocabulary-native; only the '>4 weeks == >=29 days' duration convention is added.",
+      "source_span": "Subjects who had taken an ARB or ACE inhibitor for more than 4 weeks."
+    },
+    {
+      "cohort_rule": "I7_bmi",
+      "concepts": [
+        {
+          "concept_id": 3038553,
+          "concept_set": "bmi"
+        }
+      ],
+      "criterion_id": "I7",
+      "disposition": "INCLUDE",
+      "rationale": "Numeric measurement bound with inclusive edges.",
+      "source_span": "Subjects having body mass index (BMI) 20 kg/m2 or more, 40 kg/m2 or less."
+    },
+    {
+      "cohort_rule": null,
+      "concepts": [],
+      "criterion_id": "I8",
+      "disposition": "AMBIGUOUS",
+      "rationale": "Voluntary consent / understanding is non-clinical and not evaluable over any CDM.",
+      "source_span": "Subjects who entirely understood the study and voluntarily consented."
+    },
+    {
+      "cohort_rule": "E1_no_other_diabetes",
+      "concepts": [
+        {
+          "concept_id": 201254,
+          "concept_set": "dm_other"
+        },
+        {
+          "concept_id": 195771,
+          "concept_set": "dm_other"
+        },
+        {
+          "concept_id": 4024659,
+          "concept_set": "dm_other"
+        }
+      ],
+      "criterion_id": "E1",
+      "disposition": "EXCLUDE",
+      "rationale": "Type 1 / secondary / gestational diabetes all have standard concepts; determinable exclusion.",
+      "source_span": "Subjects having type 1 diabetes, secondary diabetes, or gestational diabetes."
+    },
+    {
+      "cohort_rule": null,
+      "concepts": [],
+      "criterion_id": "E2",
+      "disposition": "AMBIGUOUS",
+      "rationale": "Resection of 'more than a half length' of stomach/intestine: the extent qualifier is not represented in the data.",
+      "source_span": "Subjects who had a history of resection of more than a half length of stomach or intestine."
+    },
+    {
+      "cohort_rule": "E3_no_ast_alt_gt_3xuln",
+      "concepts": [
+        {
+          "concept_id": 3013721,
+          "concept_set": "ast_alt"
+        },
+        {
+          "concept_id": 3006923,
+          "concept_set": "ast_alt"
+        }
+      ],
+      "criterion_id": "E3",
+      "disposition": "EXCLUDE",
+      "rationale": "Determinate once ULN is pinned; ULN value + 3x threshold are a documented convention (conventions.json).",
+      "source_span": "Subjects having more than three-fold higher levels of AST or ALT than upper normal limit."
+    },
+    {
+      "cohort_rule": "E4_no_dpp4_glp1_8wk",
+      "concepts": [
+        {
+          "concept_id": 1580747,
+          "concept_set": "dpp4_glp1"
+        },
+        {
+          "concept_id": 43526465,
+          "concept_set": "dpp4_glp1"
+        },
+        {
+          "concept_id": 45774435,
+          "concept_set": "dpp4_glp1"
+        },
+        {
+          "concept_id": 1583722,
+          "concept_set": "dpp4_glp1"
+        }
+      ],
+      "criterion_id": "E4",
+      "disposition": "EXCLUDE",
+      "rationale": "Both drug classes are vocabulary-native; only the 'within 8 weeks == 56 days' window convention is added.",
+      "source_span": "Subjects who had taken a DPP4-inhibitor or GLP-1 analogue within 8 weeks prior to screening."
+    },
+    {
+      "cohort_rule": null,
+      "concepts": [],
+      "criterion_id": "E5",
+      "disposition": "AMBIGUOUS",
+      "rationale": "'Oral triple hypoglycemic agents' has no defined count/combination that maps to a standard concept set.",
+      "source_span": "Subjects who had taken oral triple hypoglycemic agents within 8 weeks prior to screening."
+    },
+    {
+      "cohort_rule": null,
+      "concepts": [],
+      "criterion_id": "E6",
+      "disposition": "AMBIGUOUS",
+      "rationale": "'Strong' CYP3A4 inhibitor/inducer is a DDI-strength category with no vocabulary-native standard concept set; membership requires an external curated list (e.g. FDA DDI guidance).",
+      "source_span": "Subjects taking strong CYP3A4 inhibitors or strong CYP3A4 inducers."
+    },
+    {
+      "cohort_rule": null,
+      "concepts": [],
+      "criterion_id": "E7",
+      "disposition": "AMBIGUOUS",
+      "rationale": "Compound criterion; only as determinable as its weakest disjunct — breastfeeding is poorly coded.",
+      "source_span": "Subjects who are pregnant or breastfeeding."
+    },
+    {
+      "cohort_rule": null,
+      "concepts": [],
+      "criterion_id": "E8",
+      "disposition": "AMBIGUOUS",
+      "rationale": "Investigator-discretion catch-all ('other reasons'); not machine-evaluable.",
+      "source_span": "Subjects unsuitable for participation based on clinical laboratory results or other reasons."
+    }
+  ],
+  "trial_id": "NCT03667300"
+}

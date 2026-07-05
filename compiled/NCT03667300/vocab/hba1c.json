@@ -1,0 +1,18 @@
+{
+  "concept_set_id": 1,
+  "concepts": [
+    {
+      "concept_class_id": "Lab Test",
+      "concept_code": "4548-4",
+      "concept_id": 3004410,
+      "concept_name": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "domain_id": "Measurement",
+      "standard_concept": "S",
+      "vocabulary_id": "LOINC"
+    }
+  ],
+  "description": "Hemoglobin A1c measurement.",
+  "include_descendants": false,
+  "name": "hba1c",
+  "provenance": "LOINC 4548-4 -> OMOP 3004410. Athena snapshot: athena-v5-2023q3 (pinned synthetic subset)."
+}

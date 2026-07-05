@@ -1,0 +1,8 @@
+vocabulary_id,vocabulary_name,vocabulary_reference,vocabulary_version,vocabulary_concept_id
+Gender,Gender,synthetic,athena-v5-2023q3 (pinned synthetic subset),0
+LOINC,LOINC,synthetic,athena-v5-2023q3 (pinned synthetic subset),0
+None,None,synthetic,athena-v5-2023q3 (pinned synthetic subset),0
+RxNorm,RxNorm,synthetic,athena-v5-2023q3 (pinned synthetic subset),0
+SNOMED,SNOMED,synthetic,athena-v5-2023q3 (pinned synthetic subset),0
+Type Concept,Type Concept,synthetic,athena-v5-2023q3 (pinned synthetic subset),0
+Visit,Visit,synthetic,athena-v5-2023q3 (pinned synthetic subset),0
