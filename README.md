@@ -15,8 +15,11 @@ artifact is **unmodified OHDSI tooling** (`CirceR` → `SqlRender` →
 `DatabaseConnector`) — no model in the path. Where prose admits no single
 determinate encoding, the criterion compiles to **AMBIGUOUS**, never to a guess.
 
-Built on the Compiled AI methodology ("Compiled AI: Engineering Deterministic LLM
-Systems", Boris Teplitsky, 2026; arXiv 2604.05150), sibling to
+Built on the Compiled AI methodology described in
+["Compiled AI: Engineering Deterministic LLM Systems"](https://itnext.io/compiled-ai-engineering-deterministic-llm-systems-f911558764d4)
+(Boris Teplitsky, ITNEXT, 2026) — see also the related academic treatment
+[Trooskens et al., "Compiled AI: Deterministic Code Generation for LLM-Based Workflow Automation"](https://arxiv.org/abs/2604.05150)
+(arXiv:2604.05150). Sibling to
 [`tax-rules-compiler`](https://github.com/compiled-ai-labs/tax-rules-compiler). It
 is the reference implementation where the compile target is a **clinical
 phenotype** and calibrated **refusal** is the headline behaviour, not extraction
@@ -101,18 +104,19 @@ labels, or manifest dispositions (*answer-key demotion*).
 drives the LLM.** Every path faces the identical `pytest` gate suite and the
 recompile-equality check.
 
-| Backend | Command | Auth | Status |
-|---|---|---|---|
-| **claude-code** (default, tried first) | `trcompile build --backend claude-code`, or `/compile` in Claude Code | Claude Code subscription — no API key | **Verified** (agent-driven, this build) |
-| **api** | `trcompile build --backend api` | `ANTHROPIC_API_KEY` / `ANTHROPIC_BASE_URL`; pinned `claude-opus-4-8` | Provided; **not yet verified** |
-| **cursor** | `trcompile build --backend cursor`, or `/compile` in Cursor | Cursor login | Provided; **not yet verified** |
-| mock | `trcompile build --backend mock` | none | CI/tests; reproduces the committed artifact |
+| Backend | Command | Auth |
+|---|---|---|
+| **claude-code** (default, tried first) | `trcompile build --backend claude-code`, or `/compile` in Claude Code | Claude Code subscription — no API key |
+| **api** | `trcompile build --backend api` | `ANTHROPIC_API_KEY` / `ANTHROPIC_BASE_URL`; pinned `claude-opus-4-8` |
+| **cursor** | `trcompile build --backend cursor`, or `/compile` in Cursor | Cursor login |
+| mock | `trcompile build --backend mock` | none — CI/tests; reproduces the committed artifact |
 
 `trcompile build` with no `--backend` resolves `auto`: **Claude Code → API →
 Cursor**. `trcompile backends` prints what is available locally. CI always uses
-`--backend mock` (no secrets, no network). Determinism is enforced by **Gate 4
-(byte-identical recompile)**, not by a sampling temperature — Opus 4.8 removes
-`temperature`.
+`--backend mock` (no secrets, no network). Only the **claude-code** path is verified
+in this build; **api** and **cursor** are provided but not yet verified. Determinism
+is enforced by **Gate 4 (byte-identical recompile)**, not by a sampling temperature —
+Opus 4.8 removes `temperature`.
 
 ---
 
