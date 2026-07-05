@@ -53,7 +53,7 @@ def test_failed_rule_becomes_excluded():
 # ---- R-gated: real OHDSI execution ---------------------------------------
 requires_r = pytest.mark.skipif(
     not rscript_available(),
-    reason="Rscript / OHDSI stack unavailable; runs in .devcontainer/CI only.",
+    reason="Rscript / OHDSI stack unavailable; runs in the .devcontainer only.",
 )
 
 

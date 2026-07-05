@@ -35,7 +35,7 @@ def _executed_rule_names(cohort: dict) -> set[str]:
 def run(trial_id: str = "NCT03667300") -> GateResult:
     r = GateResult("Gate 3 — Fixtures / behaviour")
     if not rscript_available():
-        raise BridgeUnavailable("Rscript not found; Gate 3 runs in .devcontainer/CI only.")
+        raise BridgeUnavailable("Rscript not found; Gate 3 runs in the .devcontainer only.")
 
     art = load_artifact(trial_id)
     cohort, manifest = art["cohort"], art["manifest"]

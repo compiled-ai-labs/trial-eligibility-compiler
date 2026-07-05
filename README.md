@@ -88,8 +88,8 @@ assumption, and an **eGFR = 30 boundary**.
 **Status:** all four gates pass. **10 of 16** criteria are determinate (62.5% —
 clears the 60% feasibility bar); **6 are AMBIGUOUS** by design (I8, E2, E5, E6, E7,
 E8), the tested refusal suite. Gates 1, 2, and the pure half of 4 run with only
-Python; Gate 3 and the CirceR half of 4 run in the devcontainer/CI (they skip
-locally when `Rscript` is absent). See [`AMBIGUOUS`](#the-refusal-ledger) below.
+Python; Gate 3 and the CirceR half of 4 run in the devcontainer (they skip
+locally when `Rscript` is absent; CI is Python-only). See [`AMBIGUOUS`](#the-refusal-ledger) below.
 
 ---
 

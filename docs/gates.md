@@ -6,7 +6,8 @@ unless external, automated checks agree it does what it claims. Without them thi
 
 Gates 1 and 2 are pure Python and run inside the compiler retry loop (`tec/compile/
 compiler.py`) and in CI. Gates 3 and 4 execute the artifact and run in the
-devcontainer / CI; the R-dependent parts skip locally when `Rscript` is absent. Each
+devcontainer; the R-dependent parts skip locally and in CI when `Rscript` is absent
+(CI is Python-only). Each
 gate has a CLI: `python -m tec.gates.g1_structure` (through `g4_determinism`).
 
 ## Gate 1 — Structure (`g1_structure.py`)

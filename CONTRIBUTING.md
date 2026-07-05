@@ -16,7 +16,7 @@ uv pip install -e '.[llm]'      # optional: anthropic SDK, only for --backend ap
 
 The full runtime (OHDSI R stack + JDK + duckdb) lives in `.devcontainer/`. Gates 1,
 2, and the pure half of 4 run with only Python; Gate 3 and the CirceR half of 4 need
-R and run in the devcontainer / CI.
+R and run in the devcontainer (CI is Python-only).
 
 ## Everyday commands
 
@@ -26,7 +26,7 @@ ruff check tec tests conftest.py    # lint
 python -m tec.gates.g1_structure    # a single gate CLI (g1..g4)
 trcompile backends                  # which LLM backends are available here
 trcompile build --backend mock      # compile with the canned client (offline)
-trcheck evaluate --patient fixtures/patients/p_match.yaml   # devcontainer/CI
+trcheck evaluate --patient fixtures/patients/p_match.yaml   # devcontainer
 ```
 
 Slash commands (Claude Code / Cursor): `/compile`, `/verify`, `/new-spec`,
@@ -64,9 +64,10 @@ gates.
 
 ## Pull requests
 
-- CI (`.github/workflows/ci.yml`) must be green: lint, all four gates against the
-  committed artifact, and the recompile-equality diff (MockClient output ==
-  committed).
+- CI (`.github/workflows/ci.yml`) must be green: lint, the Python gates (1, 2, and
+  the byte-stability/boundary half of 4) + demotion + backends, and the
+  recompile-equality diff (MockClient output == committed). CI is Python-only; the
+  OHDSI-execution gates (3, and the CirceR half of 4) run in the devcontainer.
 - If you edit a `source/*.md` spec, recompile and commit the regenerated artifact —
   Gate 4's recompile-equality catches an edited spec that wasn't recompiled.
 - Keep the voice terse and technical; sentence case in docs; no emoji.

@@ -1,6 +1,6 @@
 """Gate 3 — behaviour. R-gated: executes cohort.json via the OHDSI bridge.
 
-Skips locally when Rscript is absent; runs for real in .devcontainer/CI where the
+Skips locally when Rscript is absent; runs for real in the .devcontainer where the
 CirceR/SqlRender/DatabaseConnector stack is installed.
 """
 
@@ -12,7 +12,7 @@ from tec.runtime.trcheck import BridgeUnavailable
 
 pytestmark = pytest.mark.skipif(
     not rscript_available(),
-    reason="Rscript / OHDSI stack unavailable; Gate 3 runs in .devcontainer/CI only.",
+    reason="Rscript / OHDSI stack unavailable; Gate 3 runs in the .devcontainer only.",
 )
 
 

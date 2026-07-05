@@ -70,8 +70,8 @@ the compile prompt.
 python -m pytest -q          # Gates 1, 2, pure half of 4 + fixtures + demotion
 ```
 
-Gate 3 and the CirceR half of Gate 4 run in the devcontainer / CI (they skip
-locally when `Rscript` is absent). CI runs all four with `--backend mock`.
+Gate 3 and the CirceR half of Gate 4 run in the devcontainer (they skip locally and
+in CI when `Rscript` is absent). CI is Python-only and uses `--backend mock`.
 
 ## Rough effort
 

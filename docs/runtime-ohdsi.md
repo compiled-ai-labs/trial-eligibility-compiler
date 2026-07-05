@@ -55,8 +55,8 @@ change membership — Gate 3 asserts this.
 `trcheck` and Gate 3 need the R stack (`CirceR`, `SqlRender`, `DatabaseConnector`) +
 a JDK + duckdb — pinned in `.devcontainer/` via `scripts/install_ohdsi.R`. When
 `Rscript` is absent, `trcheck` exits with a clear message and Gate 3 raises
-`BridgeUnavailable` and skips. CI installs the stack and runs them for real; the
-workflow fails if those gates skip in CI.
+`BridgeUnavailable` and skips. The `.devcontainer` installs the stack and runs them
+for real; CI is Python-only, so those cases skip there too.
 
 This split is deliberate: the pure-Python gates (structure, coverage, determinism)
 give fast local signal, while the one gate that runs the *actual* runtime — and can

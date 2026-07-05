@@ -149,8 +149,9 @@ reproduces them.
 
 The full loop runs with **no external services**:
 
-1. CI installs R + `CirceR`/`SqlRender`/`DatabaseConnector` (+ JDK) and duckdb via
-   the pinned `scripts/install_ohdsi.R`; Python deps via pip.
+1. The devcontainer installs R + `CirceR`/`SqlRender`/`DatabaseConnector` (+ JDK) and
+   duckdb via the pinned `scripts/install_ohdsi.R`; Python deps via pip. (CI itself is
+   Python-only.)
 2. `tec/runtime/cdm.py` builds each synthetic duckdb CDM from the committed CSV
    seeds + fixture YAML.
 3. `tec/runtime/ohdsi_bridge.R` loads `cohort.json` → CirceR builds SQL → SqlRender
@@ -163,4 +164,4 @@ No network, no Athena call, no patient data, deterministic across reruns.
 
 **Loop status: confirmed runnable offline end-to-end** (Gates 1, 2, and the pure
 half of 4 also run with no JVM, so local `pytest` is green without R; the CirceR
-gates run in the devcontainer/CI).
+gates run in the devcontainer, not CI).
