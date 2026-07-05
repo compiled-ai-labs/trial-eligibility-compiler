@@ -1,8 +1,8 @@
 # CLAUDE.md — trial-eligibility-compiler
 
-Guardrails for every Claude Code session in this repo. Read `PLAN.md` before any
-task. These invariants override convenience; violating one is a defect even if
-tests pass.
+Guardrails for every Claude Code session in this repo. Read `docs/design/PLAN.md`
+before any task. These invariants override convenience; violating one is a defect
+even if tests pass.
 
 ## What this repo is
 
@@ -52,14 +52,16 @@ genuine doubt, refuse — a false AMBIGUOUS is safe; a false INCLUDE/EXCLUDE is 
 
 - Python 3.11 CLI (`trcompile`, `trcheck`); R only for the OHDSI execution bridge.
 - Everything runs offline inside `.devcontainer` (Python + R + JDK + duckdb).
-- `trcompile build --trial NCT03667300` — compile (needs API key; Stage 2 mock
-  needs none).
+- `trcompile build --trial NCT03667300` — compile. Selects a backend (default
+  `auto`: claude-code, then api, then cursor); `--backend mock` needs no key/network.
 - `trcheck evaluate --patient <fixture.yaml>` — evaluate one synthetic patient
   (never needs API key or network).
-- `pytest` runs Gates 1–4; CI (`.github/workflows/ci.yml`) runs them offline.
+- `pytest` runs Gates 1–4; CI (`.github/workflows/ci.yml`) runs them offline with
+  `--backend mock`.
 
-## Stop conditions
+## Working discipline
 
-Follow the staged prompts (`prompt-1/2/3`). Do the stage you are given and stop
-at its stated deliverable. Do not jump ahead (e.g. do not wire the real Anthropic
-client during Stage 1 or 2). Present the deliverable and the gate results.
+The staged build is complete (its history is `docs/design/PLAN.md` §12). For any
+change: obey the invariants above, never weaken a gate, and present the gate
+results. When unsure of a disposition, refuse (AMBIGUOUS) — see
+`docs/AMBIGUOUS.md`. Adding a trial: `docs/new-trial.md`.
